@@ -28,7 +28,7 @@ int compare(const void *p1 , const void *p2){
 
 int main(){
     int n;
-    int sumWT = 0 , sumTat = 0 , sumrt = 0;
+    float sumWT = 0 , sumTat = 0 , sumrt = 0;
     float avgrt = 0, avgWT = 0 , avgTat = 0;
     
     printf("Enter the number of processes : ");

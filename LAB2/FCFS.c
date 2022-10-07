@@ -1,3 +1,4 @@
+
 // fcfs
 
 #include<stdio.h>
@@ -65,12 +66,15 @@ int main(){
         }
         p[i].tat = p[i].ct-p[i].at;
         p[i].wt = p[i].tat-p[i].bt;
-        
+    }
+    
+    
+    for(int i = 0 ; i <n ; i++){
         sumWT += p[i].wt;
         sumTat +=p[i].tat;
         sumrt += p[i].rt;
-        
     }
+    
     
     avgWT = sumWT/n;
     avgTat = sumTat/n;
@@ -83,7 +87,7 @@ int main(){
         printf("%d\t\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n",p[i].pid , p[i].at , p[i].bt , p[i].st , p[i].ct , p[i].rt , p[i].tat , p[i].wt);
     }
     
-    printf("Avg wt , tat , rt %d %d %d" , avgWT , avgTat , avgrt);
+    printf("Avg wt , tat , rt %f %f %f" , avgWT , avgTat , avgrt);
     
     
 }

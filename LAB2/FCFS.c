@@ -6,7 +6,7 @@
 
 struct Process{
     int pid; // process id
-    int at; // arrival id 
+    int at; // arrival time 
     int bt; // burst time
     int ct; // compiletion time 
     int tat; // trun round time 
@@ -47,17 +47,22 @@ int main(){
     qsort((void*)p , n , sizeof(struct Process) , compare);
     
     for(int i = 0 ; i < n ; i++){
+        
+        // first time CPU milaiga jab process ko
         if(i == 0){
             p[i].st = p[i].at;
             p[i].ct = p[i].st + p[i].bt;
             p[i].rt = 0;
         }
         
-        if(p[i-1].ct < p[i].at){
+        // CPU mila par context switch ke baad
+        else if(p[i-1].ct < p[i].at){
             p[i].st = p[i].at;
             p[i].ct = p[i].st + p[i].bt;
             p[i].rt = 0;
         }
+        
+        // CPU mila par kise process ke baad
         else
         {
             p[i].st = p[i-1].ct;

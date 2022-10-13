@@ -1,6 +1,3 @@
-
-// fcfs
-
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -31,6 +28,8 @@ int main(){
     int n;
     float sumWT = 0 , sumTat = 0 , sumrt = 0;
     float avgrt = 0, avgWT = 0 , avgTat = 0;
+    int idealTime = 0;
+    float cpuUtilization , Throughput;
     
     printf("Enter the number of processes : ");
     scanf("%d" , &n);
@@ -60,6 +59,7 @@ int main(){
             p[i].st = p[i].at;
             p[i].ct = p[i].st + p[i].bt;
             p[i].rt = 0;
+            idealTime += p[i].at - p[i-1].ct;
         }
         
         // CPU mila par kise process ke baad
@@ -92,7 +92,14 @@ int main(){
         printf("%d\t\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n",p[i].pid , p[i].at , p[i].bt , p[i].st , p[i].ct , p[i].rt , p[i].tat , p[i].wt);
     }
     
-    printf("Avg wt , tat , rt %f %f %f" , avgWT , avgTat , avgrt);
+    printf("Avg wt , tat , rt %f %f %f\n" , avgWT , avgTat , avgrt);
     
-    
+    int totalTime = p[n-1].ct;
+
+    cpuUtilization = ((float)(totalTime - idealTime) / totalTime )*100;
+    Throughput = (float)n/(float)totalTime;
+
+    printf("%f %f" , cpuUtilization , Throughput);
+
+
 }

@@ -59,7 +59,7 @@ int main(){
             p[i].st = p[i].at;
             p[i].ct = p[i].st + p[i].bt;
             p[i].rt = 0;
-            idealTime += p[i].at - p[i-1].ct;
+            idealTime += p[i].st - p[i-1].ct;
         }
         
         // CPU mila par kise process ke baad

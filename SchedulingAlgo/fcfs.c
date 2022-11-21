@@ -9,7 +9,7 @@ struct Process{
     int tat; // trun round time 
     int wt ; // waiting time 
     int rt; // response time
-    int st; // strat time 
+    int st; // start time 
 };
 
 
@@ -92,7 +92,7 @@ int main(){
         printf("%d\t\t%d\t%d\t%d\t%d\t%d\t%d\t%d\n",p[i].pid , p[i].at , p[i].bt , p[i].st , p[i].ct , p[i].rt , p[i].tat , p[i].wt);
     }
     
-    printf("Avg wt , tat , rt %f %f %f\n" , avgWT , avgTat , avgrt);
+     printf("Average Response Time =  %0.2f\n Average TurnAround Time = %0.2f\n  Average Waiting Time = %0.2f\n" , avgrt , avgTat , avgWT);
     
     int totalTime = p[n-1].ct;
 

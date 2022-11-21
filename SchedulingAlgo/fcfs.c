@@ -99,7 +99,6 @@ int main(){
     cpuUtilization = ((float)(totalTime - idealTime) / totalTime )*100;
     Throughput = (float)n/(float)totalTime;
 
-    printf("%f %f" , cpuUtilization , Throughput);
-
+    printf("CPU Utilitzation - 0.2%f Throughput - 0.2%f" , cpuUtilization , Throughput);
 
 }

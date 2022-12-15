@@ -38,10 +38,11 @@ int main(){
         frame[i] = -1;
     
     
-    
+    printf("\nref String  \t\t page Frames \tHit/Fault\n");
     for(int i = 0 ; i < n ; i++)
     {
         flag1 = flag2 = 0;
+       
         
        // Checking for Hit
        
@@ -81,11 +82,17 @@ int main(){
             time[pos] = t;
         }
         printf("\n");
-        
+        printf("%d\t\t" , ref_str[i]);
         for(int j = 0 ; j < no_frame ; j++)
             printf("%d\t" , frame[j]);
+        if(flag1 & flag2)
+            printf("H");
+        else
+            printf("F");
     }
     
     printf("\n\n Total Page Faults = %d" , page_fault);
+    printf("\nPage Fault ratio = %.2f\n",(float)page_fault/n);
+    printf("\nPage Hit Ratio = %.2f\n",(float)(n- page_fault)/n);
     return 0;
 }

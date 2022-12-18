@@ -20,7 +20,7 @@ void sort(int arr[] , int n)
 }
 
 
-int scan(int request_queue[] , int seek_sequence[] , int current_head_pos , int n , int direction , int mx_track)
+int cscan(int request_queue[] , int seek_sequence[] , int current_head_pos , int n , int direction , int mx_track)
 {
     printf("current_head_pos - %d\n" , current_head_pos); 
     int seekTime = 0;
@@ -117,7 +117,7 @@ int main(){
     printf("Enter the Direction = ");
     scanf("%d",&direction);
    
-    TotalSeekTime = scan(request_queue , seek_sequence , head , n , direction , mx_track);
+    TotalSeekTime = cscan(request_queue , seek_sequence , head , n , direction , mx_track);
     
     printf("\nTotal No. of Head Movements = %d\n",TotalSeekTime);
     printf("\nAverage head movements = %.2f\n\n",(float)TotalSeekTime/n);

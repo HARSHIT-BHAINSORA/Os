@@ -58,6 +58,9 @@ int cscan(int request_queue[] , int seek_sequence[] , int current_head_pos , int
     
     int run = 2;
     
+    if(direction == 1)
+    {
+        
     while(run--)
     {
         if(direction == 0)
@@ -82,6 +85,33 @@ int cscan(int request_queue[] , int seek_sequence[] , int current_head_pos , int
         }
     
     }    
+    }
+    else{
+         while(run--)
+        {
+        if(direction == 0)
+        {
+            for(int i = l-1 ; i >= 0 ; i--)
+            {
+                seek_sequence[idx++] = left[i];
+                seekTime += abs(current_head_pos - left[i]);
+                current_head_pos = left[i];
+            }
+            direction = 1;
+        }
+        else if(direction == 1)
+        {
+            for(int i = r-1 ; i >= 0 ; i--)
+            {
+                seek_sequence[idx++] = right[i];
+                seekTime += abs(current_head_pos - right[i]);
+                current_head_pos = right[i];
+            }
+            direction = 0;
+        }
+    
+    }    
+    }
     
     printf("\nSeek Sequence: ");
         for(int i=0;i<idx;i++)

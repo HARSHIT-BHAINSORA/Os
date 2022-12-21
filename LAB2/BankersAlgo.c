@@ -32,7 +32,7 @@ int main()
         Need[i].C = require[i].C - allocated[i].C;  
     }
 
-    printf("Enter the Aaliable Resources = ");
+    printf("Enter the Available Resources = ");
     scanf("%d%d%d" , &A,&B,&C);
 
     int idx = 0;

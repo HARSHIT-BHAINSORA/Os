@@ -9,7 +9,7 @@ int main(){
     
     returnstatus = pipe(p);
     
-    if(returnstatus == 1)
+    if(returnstatus < 0)
     {
         printf("Pipe is not Created...");
     }
